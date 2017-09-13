@@ -59,3 +59,19 @@ def differens(OldTimetable ,  NewTimetable):               #сравниваем
 
 
 
+def changeURL(Url):
+    i = 0
+    for i in range(Config.Unn):
+        if (Url[i] == 1) or (Url[i] == 2) or\
+                (Url[i] == 3) or (Url[i] == 4) or (Url[i] == 5)\
+                or (Url[i] == 6) or (Url[i] == 7) or (Url[i] == 8)\
+                or (Url[i] == 9):
+            if (Url[i+1] == 9):
+                Change = int(Url[i])
+                Change += 1
+                Url[i] = str(Change)
+                Url[i+1] = '0'
+            else:
+                Change = int(Url[i+1])
+                Change += 1
+                Url[i+1] = str(Change)
